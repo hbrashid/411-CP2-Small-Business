@@ -7,6 +7,7 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 
 const Listing = (props) => {
     return (
@@ -32,7 +33,7 @@ const Listing = (props) => {
                         {/* <TableCell component="th" scope="row">
                             {business.id}
                         </TableCell> */}
-                        <TableCell>{business.name}</TableCell>
+                        <TableCell component={Link} to={`/details/${business.id}`} >{business.name}</TableCell>
                         <TableCell>{business.description}</TableCell>
                         <TableCell>{business.address}</TableCell>
                         <TableCell>{business.hours}</TableCell>
