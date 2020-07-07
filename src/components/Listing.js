@@ -18,33 +18,39 @@ const Listing = (props) => {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Id</TableCell>
-                        <TableCell>Make/Model</TableCell>
-                        <TableCell>MPG</TableCell>
-                        <TableCell>Cylinders</TableCell>
-                        <TableCell>Horsepower</TableCell>
-                        <TableCell>Delete</TableCell>
+                        <TableCell>Name</TableCell>
+                        <TableCell>Description</TableCell>
+                        <TableCell>Address</TableCell>
+                        <TableCell>Hours</TableCell>
+                        
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {props.businesses.map((business) => (
-                    <TableRow key={business.id}>
-                        <TableCell component="th" scope="row">
+                {props.businesses.map((business, idx) => (
+                
+                    <TableRow key={idx}>
+                        {/* <TableCell component="th" scope="row">
                             {business.id}
-                        </TableCell>
-                        <TableCell>{business["name"]}</TableCell>
-                        <TableCell>{business["description"]}</TableCell>
-                        <TableCell>{business["address"]}</TableCell>
-                        <TableCell>{business["operating hours"]}</TableCell>
+                        </TableCell> */}
+                        <TableCell>{business.name}</TableCell>
+                        <TableCell>{business.description}</TableCell>
+                        <TableCell>{business.address}</TableCell>
+                        <TableCell>{business.hours}</TableCell>
                         <TableCell>
                             
                         </TableCell>
                     </TableRow>
+                
                 ))}
+                
                 </TableBody>
+                
             </Table>
+                
         </Container>
+                      
     )
+      
 }
 
 export default Listing
