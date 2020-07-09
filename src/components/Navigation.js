@@ -3,6 +3,7 @@ import { AppBar, Toolbar, IconButton,
     Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-router-dom'
+// import checkAuth from '../Router'
 
 const Navigation = () => {
     return (
@@ -16,7 +17,14 @@ const Navigation = () => {
                 </Typography>
                 <ul className="nav-list">
                     <li className="nav-list-item">
-                        <Link to="/">Listings</Link>
+                        <Link className='listing' to="/">Listings</Link>
+                    </li>
+                    <li className="nav-list-item"
+                        onClick={() => {
+                            document.cookie = "loggedIn="
+                            window.location.replace("/login")
+                        }}>
+                        Logout
                     </li>
                     
                     

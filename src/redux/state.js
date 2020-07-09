@@ -1,5 +1,10 @@
 export default {
 
+    user: {
+        username: 'Human',
+        email: 'test-user@example.com'
+    },
+
     businesses: [
         {
             "id": 1,

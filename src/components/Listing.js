@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 const Listing = (props) => {
     return (
         <Container maxWidth="lg" className="car-container">
+            <h4>Welcome, {props.user.username}</h4>
             
             <div className="flex-container">
             

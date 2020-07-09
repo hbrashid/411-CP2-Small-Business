@@ -18,9 +18,25 @@
   color: #61dafb;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 50%;
+}
+
+.login-button {
+  margin-top: 25px !important;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
+}
+
+.listing {
+  text-decoration: none;
+  color: white;
 }
 
 .nav-list-item {
