@@ -2,7 +2,8 @@ export default {
 
     user: {
         username: 'Human',
-        email: 'test-user@example.com'
+        email: 'test-user@example.com',
+        loggedIn: 'false'
     },
 
     businesses: [

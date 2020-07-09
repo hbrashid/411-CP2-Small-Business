@@ -14,7 +14,9 @@ import {checkAuth} from "../checkAuth";
 const Listing = (props) => {
   return (
     <Container maxWidth="lg" className="car-container">
+        {checkAuth() &&
       <h4>Welcome, {props.user.username}</h4>
+        }
 
       <div className="flex-container"></div>
       <Table>

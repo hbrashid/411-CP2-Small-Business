@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router'
+// import { Redirect } from 'react-router'
 import {
   TextField,
   Button,
@@ -20,7 +20,7 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    document.cookie = 'loggedIn = true';
+    document.cookie = 'loggedIn = true; max-age = 60*1000'
     this.props.loginUser(this.state.username);
     this.props.history.push('/');
   }
