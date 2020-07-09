@@ -27,9 +27,9 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
 const Router = () => {
     return (
         <Switch>
-            <Route path="/login" component={Login} />
+            <Route exact path="/login" component={Login} />
             <Route exact path="/" component={Listing} />
-            <Route path='/details/:id' component={Details} />
+            <Route exact path='/details/:id' component={Details} />
             
         </Switch>
     );

@@ -7,7 +7,9 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
+import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from 'react-router-dom';
+import checkAuth from '../Router'
 
 const Listing = (props) => {
     return (
@@ -24,6 +26,7 @@ const Listing = (props) => {
                         <TableCell>Description</TableCell>
                         <TableCell>Address</TableCell>
                         <TableCell>Hours</TableCell>
+                        <TableCell>Delete</TableCell>
                         
                     </TableRow>
                 </TableHead>
@@ -38,9 +41,11 @@ const Listing = (props) => {
                         <TableCell>{business.description}</TableCell>
                         <TableCell>{business.address}</TableCell>
                         <TableCell>{business.hours}</TableCell>
-                        <TableCell>
-                            
+                        
+                        <TableCell >
+                                <DeleteIcon color='error' onClick={() => checkAuth() ? props.deleteBusiness(idx) : ''} />
                         </TableCell>
+                        
                     </TableRow>
                 
                 ))}
