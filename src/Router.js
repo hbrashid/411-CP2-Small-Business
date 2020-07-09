@@ -1,15 +1,14 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router'
-import cookie from 'cookie'
+import {checkAuth} from './checkAuth'
+// import cookie from 'cookie'
 import Listing from './containers/Listing'
 import Details from './containers/Details'
-import Login from './components/Login'
+import Login from './containers/Login'
+// import Landing from './components/Landing'
+import AddListing from './containers/AddListing'
 
 
-const checkAuth = () => {
-    const cookies = cookie.parse(document.cookie)
-    return cookies["loggedIn"] ? true : false
-}
 
 
 const ProtectedRoute = ({component: Component, ...rest}) => {
@@ -27,9 +26,11 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
 const Router = () => {
     return (
         <Switch>
-            <Route exact path="/login" component={Login} />
+            {/* <Route exact path='/' component={Landing} /> */}
+            <Route path="/login" component={Login} />
             <Route exact path="/" component={Listing} />
-            <Route exact path='/details/:id' component={Details} />
+            <Route path='/details/:id' component={Details} />
+            <ProtectedRoute path="/add" component={AddListing} />
             
         </Switch>
     );

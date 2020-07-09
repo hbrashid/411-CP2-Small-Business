@@ -6,7 +6,7 @@ import {
   Container
 } from '@material-ui/core'
 
-class App extends Component {
+class Login extends Component {
   state = {
     username: '',
     password: ''
@@ -18,20 +18,18 @@ class App extends Component {
     this.setState(state)
   }
 
-  login = (e) => {
-    e.preventDefault()
-    // set cookie here
-    // set loggedIn = true and max-age = 60*1000 (one minute)
-    document.cookie = 'loggedIn = true ; max-age = 60*1000'
-
-    window.location.replace("/")
+  handleSubmit = (event) => {
+    event.preventDefault();
+    document.cookie = 'loggedIn = true';
+    this.props.loginUser(this.state.username);
+    this.props.history.push('/');
   }
 
   render() {
     return (
       <div className="App">
         <Container maxWidth="sm">
-          <form className="login-form" onSubmit={this.login}>
+          <form className="login-form" onSubmit={this.handleSubmit}>
             <TextField
               required
               onChange={this.handleTextChange}
@@ -58,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Login;
