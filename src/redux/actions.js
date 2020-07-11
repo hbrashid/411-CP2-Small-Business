@@ -15,9 +15,9 @@ export const deleteBusiness = (index) => {
     }
   }
 
-  export const loginUser = (username) => {
+  export const loginUser = (user) => {
     return {
       type: 'LOGIN_USER',
-      value: username
+      value: user
     }
   }

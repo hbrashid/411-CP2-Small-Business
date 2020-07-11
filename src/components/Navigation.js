@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
   return (
-      <div>
+      <React.Fragment>
     <AppBar position="relative">
       <Toolbar>
         <IconButton color="inherit">
@@ -26,21 +26,30 @@ const Navigation = (props) => {
               </Link>
             }
           
-          <li className="nav-list-item"
-            onClick={() => {
-              document.cookie = "loggedIn="
-            }}>
-            <Link  to="/login" className="listing" >{checkAuth() ? "Logout" : "Login"}</Link>
-          </li>
+          {checkAuth() ? (
+              <li className="nav-list-item"
+                onClick={() => {
+                  document.cookie = "loggedIn=";
+                  window.location.replace('/');
+                }}
+            
+                >Logout
+              </li>
+            ):(
+              <Link className="listing" to="/login" >
+                <li>Login</li>
+              </Link>
+              )}
         </ul>
       </Toolbar>
     </AppBar>
     
-    {/* {checkAuth() &&
-        <div>Welcome: {props.user.username}</div>
-      } */}
+    {checkAuth() &&
+        <div style={{marginLeft: '5%'}} >Welcome, {props.user}</div>
+      }
+      </React.Fragment>
       
-      </div>
+      
   );
 };
 

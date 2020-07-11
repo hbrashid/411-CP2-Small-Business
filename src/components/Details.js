@@ -11,7 +11,7 @@ const Details = ({ businesses, match }) => {
   return (
     <Container
       style={{
-        margin: "100px 80px 0",
+        margin: "50px 10px 0",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
@@ -32,7 +32,7 @@ const Details = ({ businesses, match }) => {
       <Map
         center={position}
         zoom={13}
-        style={{ width: "40%", height: "400px" }}
+        style={{marginLeft: "35%", width: "40%", height: "400px" }}
       >
         <TileLayer
           attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

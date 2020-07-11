@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginUser: (username) => dispatch(loginUser(username))
+    loginUser: (user) => dispatch(loginUser(user))
   }
 }
 

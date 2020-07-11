@@ -5,8 +5,7 @@ import {deleteBusiness} from '../redux/actions'
 
 const mapStateToProps = (state) => {
     return {
-        businesses: state.businesses,
-        user: state.user
+        businesses: state.businesses
     }
 }
 

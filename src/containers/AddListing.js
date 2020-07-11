@@ -4,7 +4,7 @@ import { addBusiness } from "../redux/actions";
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
+    businesses: state.businesses,
   };
 };
 
